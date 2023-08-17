@@ -1,188 +1,171 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 :root{
-    /* Colors */
+   /* Colors */
 
-   /* Primary */
+     /* Primary  */
 
---Cyan: hsl(179, 62%, 43%);
---Bright-Yellow: hsl(71, 73%, 54%);
+--Very-dark-blue-main: hsl(233, 47%, 7%);
+--Dark-desaturated-blue-card : hsl(244, 38%, 16%);
+--Soft-violet-accent: hsl(277, 64%, 61%);
 
-    /* Neutral */
+    /* Neutral  */
 
---Light-Gray: hsl(204, 43%, 93%);
---Grayish-Blue: hsl(218, 22%, 67%);
+--White-main-heading: hsl(0, 0%, 100%);
+--Slightly-transparent-white-main: hsla(0, 0%, 100%, 0.75);
+--Slightly-transparent-white-stat-headings: hsla(0, 0%, 100%, 0.6);
 
     /* Fonts */
 
---Font-size: 16px;
---Font-Family: 'Karla',sans-serif;
---Font-Weight-medium: 400; 
---Font-Weight-bold:700;
-
+    --Font-size: 15px;
+    --Font-Family:'Lexend Deca',sans-serif;
+    --Font-Weight: 400,
 }
 body{
     width: 100%;
     height: 100vh;
     font-family: var(--Font-Family);
-    background-color: var(--Light-Gray);
     font-size: var(--Font-size);
-    display: grid;
+    background-color: var(--Very-dark-blue-main);
+    display:grid;
     place-items: center;
 
-    & #card{
-    background-color: white;
-    border-radius: 10px;
-    width: 750px;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);  
-    
-    & .community{
-        background-color: white;
-        width: 100%;
-        height: 50%;
-        padding: 3rem;
-        border-radius: 10px 10px 0 0;
-
-        & h2{
-        color: var(--Cyan);
-        font-size: 1.8rem;
-        margin-bottom: 1.7rem;
-        opacity: 1.3;
-        }
-
-        & h3{
-            color: var(--Bright-Yellow);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        & p{
-            color: var(--Grayish-Blue);
-            line-height: 1.8;
-            width: 90%;
-        }
-    }
-    
-    & .bottom{
+     & .card{
+        width: 1050px;
+        height: 460px;
+        background-color: var(--Dark-desaturated-blue-card);
         display: flex;
         flex-direction: row;
-        height: 50%;
+        border-radius: 9px;
+        gap: 3.5rem;
 
-        & .subscription, & .why_us{
-            width: 50%;
-            height: 100%;
-            color: white;
+        & .description{
+        width: 500px;
+        padding: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
 
-            & h3{
-                font-size: 1.3rem;
-                margin-bottom: 1.7rem;
-            }
-            &  p{
-                color: var(--Light-Gray);
-                line-height: 1.5;
-                width: 100%;
+        &  h1{
+            color: var(--White-main-heading);
+            width: 100%;
+            font-size: 2.3rem;
+
+            & b{
+                color: var(--Soft-violet-accent);
             }
         }
+        
+        & p{
+            color: var(--Slightly-transparent-white-stat-headings);
+            line-height: 1.8rem;
+        }
+    }
 
-        & .subscription {
-            background-color: var(--Cyan);
-            border-radius: 0 0 0 10px;
-            padding: 2.7rem;
-            opacity: 1.3;
+        & .image{
+            background-image: url('./images/image-header-desktop.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 500px;
+            height: 460px;
+            border-radius: 0 9px 9px 0; 
+            position: relative;
+        }
+
+        & .image::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 460px;
+            border-radius: 0 9px 9px 0;
+            background-color: var(--Soft-violet-accent);
+            mix-blend-mode: multiply; 
+        }
+
+        & article{
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 4rem;
+        }
+        
+       & .companies, & .templates, & .queries{
+            & h4{
+            color: var(--White-main-heading);
+            font-size: 23px;
+            font-weight: var(--Font-Weight);
+            }
+
             & p{
-                margin-bottom: 1.65rem;
-            }
-            & .price{
-                margin-bottom: 0;
-
-                & span{
-                    color:var(--Light-Gray);
-                    font-size: 16px;
-                    position: absolute;
-                    margin-top: 1.2rem;
-                     opacity: .6;
-                }
-                & b{
-                    font-size: 2.7rem;
-                    color: white;
-                    margin-right: .7rem;
-                }
-            }
-            & .btn{
-                width: 100%;
-                border: none;
-                border-radius: 5px;
-                background-color: var(--Bright-Yellow);
-                color: white;
-                height: 3.3rem;
-                cursor: pointer;
-                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-            }
-            & .btn:hover{
-                cursor: pointer;
-                opacity: .9;
-            }
+            margin-top: 0.3rem;
+            color: var(--Slightly-transparent-white-stat-headings);
+            text-transform: uppercase;    
+            } 
         }
-        & .why_us{
-            background-color: var(--Cyan);
-            border-radius: 0 0 10px 0 ;
-            opacity: .8;
-            padding: 2.7rem; 
+
+        & .queries{
+            & h4{
+             text-transform: uppercase;
+            }
         }
     }
 }
-}
+
+
 
 @media (max-width:650px) {
     body{
         height: 100%;
-    
-    & #card{
-        margin: 5rem 0 5rem 0;
-        width: 90%;
-        padding: 0;
-    
-    & .community{
-        width: 100%;
-        padding: 1.7rem ;
 
-        & h2{
-            font-size: 1.5rem;
-        }
-        & h3{
-        font-size: 1.1rem;
-        }
-        & p{
+        & .card{
+            width: 90%;
+            flex-direction: column-reverse;
+            height: fit-content;
+            max-width: 375px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 4rem 0;
+        
+    
+        & .image{
+            background-image: url('./images/image-header-mobile.jpg');
             width: 100%;
+            height: 275px;
+            border-radius: 9px 9px 0 0;
+        }
+
+        & .image::before{
+        width: 100%;
+        height: 275px;
+        border-radius: 9px 9px 0 0;
+        }
+
+       & .description{
+            max-width: 100%;
+            padding: 2rem;
+
+            & h1{
+                font-size: 1.8rem;
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        & article{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 0;
         }
     }
     
-     & .bottom{
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-
-    & .subscription,& .why_us{
-        width: 100%;
-        padding: 2rem;
-    }
-
-    & .subscription{
-        border-radius: 0;
-    }
-
-    & .why_us{
-        border-radius: 0 0 10px 10px;
-    }
-    }
-    
-}
-}
+ }
 }
